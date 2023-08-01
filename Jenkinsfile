@@ -43,7 +43,7 @@ pipeline {
         stage('Checkout K8S manifest SCM'){
             steps {
                 git credentialsId: 'github-pat-tokan', 
-                url: 'https://github.com/aoc-devops/python_argocd_k8s',
+                url: 'https://github.com/aoc-devops/deployment_menifest_files',
                 branch: 'main'
             }
         }
