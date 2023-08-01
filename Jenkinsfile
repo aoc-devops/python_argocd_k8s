@@ -11,8 +11,8 @@ pipeline {
         stage('Checkout'){
            steps {
                 git credentialsId: 'github-pat-tokan', 
-                url: 'https://github.com/aoc-devops/Jenkins-Zero-To-Hero',
-                branch: 'amit'
+                url: 'https://github.com/aoc-devops/python_argocd_k8s',
+                branch: 'main'
            }
         }
 
@@ -41,7 +41,7 @@ pipeline {
         stage('Checkout K8S manifest SCM'){
             steps {
                 git credentialsId: 'github-pat-tokan', 
-                url: 'https://github.com/aoc-devops/deployment_menifest_files',
+                url: 'https://github.com/aoc-devops/python_argocd_k8s',
                 branch: 'main'
             }
         }
