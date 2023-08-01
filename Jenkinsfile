@@ -4,6 +4,7 @@ pipeline {
     
     environment {
         IMAGE_TAG = "${BUILD_NUMBER}"
+        DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-amit')
     }
     
     stages {
@@ -31,6 +32,7 @@ pipeline {
            steps{
                 script{
                     sh '''
+                    echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
                     echo 'Push to Repo'
                     docker push amitdevops12/cicd-e2e:${BUILD_NUMBER}
                     '''
